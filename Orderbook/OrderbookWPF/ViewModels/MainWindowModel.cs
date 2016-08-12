@@ -95,20 +95,9 @@ namespace OrderbookWPF.ViewModels
             }
             else
             {
-                DispatcherHelper.CheckBeginInvokeOnUI(() =>
-                {
-                    OrderUpdates.Add(update);
-                });
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+                var d = DispatcherHelper.UIDispatcher.BeginInvoke(
+                    new Action(() => OrderUpdates.Add(update)));
+                d.Wait();
             }
         }
     }
