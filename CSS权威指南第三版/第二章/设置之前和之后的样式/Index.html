@@ -1,0 +1,36 @@
+<!Doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            body {
+                font-size: large; 
+            }
+
+            p:first-letter{
+                color: red;
+                font-size: 200%;
+                }
+
+            p:first-line{
+                color: green;
+                font-size: 2em;
+            }
+
+            p:last-letter{
+                color: blue;
+            }
+
+            body:after{
+                content:"The End.";
+            }
+            
+        </style>
+    </head>
+    <body>
+        <h2>This is an h2 element.</h2>
+        <p>before</p>
+        <p id="center">This is a paragraph with <em>an inline element</em> within it.</p>
+        <p>after</p>
+    </body>
+</html>
