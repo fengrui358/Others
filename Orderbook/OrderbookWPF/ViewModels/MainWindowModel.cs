@@ -95,9 +95,8 @@ namespace OrderbookWPF.ViewModels
             }
             else
             {
-                var d = DispatcherHelper.UIDispatcher.BeginInvoke(
+                DispatcherHelper.UIDispatcher.Invoke(
                     new Action(() => OrderUpdates.Add(update)));
-                d.Wait();
             }
         }
     }
